@@ -10,6 +10,7 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
+    private MyStack<String> stack;
     /**
      * Create the test case
      *
@@ -34,5 +35,21 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void setUp() {
+        stack = new MyStack<>();
+    }
+    public void testPush() {
+        stack.push("first");
+        stack.push("second");
+        assertEquals("Second element should be on top", "second", stack.peek());
+    }
+
+    public void testPop() {
+        stack.push("first");
+        stack.push("second");
+        assertEquals("Pop should return the last element pushed", "second", stack.pop());
+
     }
 }
