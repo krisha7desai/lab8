@@ -10,18 +10,19 @@ public class MyStack<E> extends ArrayList<E> {
     }
 
     public void push(E e) {
-        add(e);
+
+        this.add(e);
     }
 
     public E pop() {
-        if (isEmpty()) throw new EmptyStackException();
-        E e = get(size() - 1);
-        remove(size() -1 );
+        if (this.isEmpty()) throw new EmptyStackException();
+        E e = this.get(size() - 1);
+        this.remove(size() -1 );
         return e;
     }
     public E peek() {
-        if (isEmpty()) throw new EmptyStackException();
-        return get(size() - 1);
+        if (this.isEmpty()) throw new EmptyStackException();
+        return this.get(size() - 1);
     }
 
 
